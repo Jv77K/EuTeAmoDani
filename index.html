@@ -11,8 +11,8 @@
       margin: 0;
       padding: 0;
       text-align: center;
-      overflow: hidden;
       background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
     }
 
     @keyframes float {
@@ -22,10 +22,11 @@
     }
 
     .heart {
-      position: absolute;
+      position: fixed; /* Usamos fixed para não interferir na rolagem */
       color: #ff4d4d;
       font-size: 20px;
       animation: float 3s infinite ease-in-out;
+      pointer-events: none; /* Impede que os corações interfiram com cliques */
     }
 
     .heart:nth-child(1) { left: 10%; top: 20%; }
